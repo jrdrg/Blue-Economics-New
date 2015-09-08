@@ -40,6 +40,7 @@ function IndustryController($state, blueEconomics) {
         var searchTerm = self.industry;
         
         if (searchTerm && searchTerm.length >= MIN_CHARS) {
+            self.searchResults = [];
             blueEconomics.search(searchTerm || '')
                 .then(function(data) {
                     self.searchResults = data.industries || [];
